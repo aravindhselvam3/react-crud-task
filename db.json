@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Aravindh",
+      "email": "aravindh@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Isakki Muthu abc",
+      "email": "Isakki@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "Selvam",
+      "email": "selvam@gmail.com"
+    },
+    {
+      "id": 4,
+      "name": "Akash",
+      "email": "akash@gmail.com"
+    },
+    {
+      "id": 5,
+      "name": "Shiva",
+      "email": "shiva@gmail.com"
+    },
+    {
+      "id": 6,
+      "name": "Mukesh",
+      "email": "mukesh@gmail.com"
+    },
+    {
+      "name": "chandru",
+      "email": "chandru@gmail.com",
+      "id": 7
+    }
+  ]
+}
