@@ -5,10 +5,10 @@ import { useParams } from 'react-router-dom';
 function DeleteUser() {
   const { id } = useParams();
   const [selectedId, setSelectedId] = useState('');
-  const [userIds, setUserIds] = useState([]); // State to store user IDs
+  const [userIds, setUserIds] = useState([]); 
 
   useEffect(() => {
-    // Fetch user IDs and populate the dropdown options
+
     axios.get('http://localhost:3001/users').then((response) => {
       const ids = response.data.map((user) => user.id);
       setUserIds(ids);
@@ -22,9 +22,9 @@ function DeleteUser() {
 
   const handleDelete = async () => {
     try {
-      // Make a DELETE request to remove the user from the server
+      
       await axios.delete(`http://localhost:3001/users/${selectedId}`);
-      // Redirect to the list of users after successful deletion
+      
       window.location.href = '/users';
     } catch (error) {
       console.error('Error deleting user', error);
@@ -38,7 +38,7 @@ function DeleteUser() {
         Select a user to delete:
         <select onChange={handleSelectChange} value={selectedId}>
           <option value="">Select a user</option>
-          {/* Populate the dropdown with user IDs */}
+          
           {userIds.map((userId) => (
             <option key={userId} value={userId}>
               {userId}

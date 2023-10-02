@@ -4,8 +4,6 @@ import CreateUser from './components/CreateUser';
 import ListUsers from './components/ListUsers';
 import EditUser from './components/EditUser';
 import DeleteUser from './components/DeleteUser';
-import UserProfile from './components/UserProfile';
-import EditProfile from './components/EditProfile';
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 
@@ -55,8 +53,6 @@ function App({id}) {
         <Link style={padding} to="/create-user">Create User</Link>
         <Link style={padding} to={`/edit-user/${id}`}>Edit User</Link>
           <Link style={padding} to={`/delete-user/${id}`}>Delete Users</Link>
-          <Link style={padding} to={`/profile/${id}`}>Profile</Link>
-          <Link style={padding} to={`/edit-profile/${id}`}>Edit Profile</Link>
 
 
       </div>
@@ -77,8 +73,6 @@ function App({id}) {
         />
         <Route path="/edit-user/:id" element={<EditUser />} />
         <Route path="/delete-user/:id" element={<DeleteUser />} />
-        <Route path="/profile/:id" element={<UserProfile />} />
-        <Route path="/edit-profile/:id" element={<EditProfile />} />
       </Routes>
     </Router>
   );

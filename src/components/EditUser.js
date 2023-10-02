@@ -5,17 +5,17 @@ import { useParams } from 'react-router-dom';
 function EditUser() {
   const { id } = useParams();
   const [user, setUser] = useState({ name: '', email: '' });
-  const [userIds, setUserIds] = useState([]); // To store the list of user IDs
-  const [selectedId, setSelectedId] = useState(id); // Initialize selectedId with the current ID
+  const [userIds, setUserIds] = useState([]); 
+  const [selectedId, setSelectedId] = useState(id); 
 
   useEffect(() => {
-    // Fetch the list of user IDs and user data
+    
     axios.get('http://localhost:3001/users').then((response) => {
       const ids = response.data.map((userData) => userData.id);
       setUserIds(ids);
     });
 
-    //Fetch the user data to pre-fill the form
+   
     axios.get(`http://localhost:3001/users/${selectedId}`).then((response) => {
       setUser(response.data);
     });
@@ -34,9 +34,9 @@ function EditUser() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Make a PUT request to update the user information
+     
       await axios.put(`http://localhost:3001/users/${selectedId}`, user);
-      // Redirect to the user profile page after successful update
+   
       setUser({ name: '', email: '' });
       window.location.href = `/profile/${selectedId}`;
     } catch (error) {

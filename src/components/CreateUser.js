@@ -15,7 +15,7 @@ function CreateUser() {
     e.preventDefault();
     try {
       await axios.post('http://localhost:3001/users/', newUser);
-      // Reset input fields and focus on the first input field
+      
       setNewUser({ name: '', email: '' });
       nameInputRef.current.focus();
     } catch (error) {
@@ -34,7 +34,7 @@ function CreateUser() {
             name="name"
             value={newUser.name}
             onChange={handleInputChange}
-            ref={nameInputRef} // Ref for the name input
+            ref={nameInputRef} 
           />
         </label>
         <br />
@@ -50,7 +50,7 @@ function CreateUser() {
         <br />
         <button type="submit">Create User</button>
       </form>
-      {/* Create a link to the /users page */}
+     
       <Link to="/users">Go to Users</Link>
     </div>
   );
