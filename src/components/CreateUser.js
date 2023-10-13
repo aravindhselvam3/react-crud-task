@@ -15,7 +15,7 @@ function CreateUser() {
     e.preventDefault();
     try {
       await axios.post('http://localhost:3001/users/', newUser);
-      
+  
       setNewUser({ name: '', email: '' });
       nameInputRef.current.focus();
     } catch (error) {
